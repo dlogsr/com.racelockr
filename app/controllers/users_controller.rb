@@ -59,6 +59,9 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
+  def races
+  end
+
 
   private
   	def  user_params
