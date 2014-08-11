@@ -1,0 +1,9 @@
+<li class="list-group-item">
+	<div class="name">Race: <b><%= race.name %></b></div>
+	<div class="date">Date: <%= race.date.to_formatted_s(:long) %></div>
+	<div class="time">Time: <%= (race.time/216000.0).round(3) %> hours</div>
+	<div class="description">Description: <%= race.description %></div>
+	<% if current_user?(race.user) %>
+		<%= render 'shared/delete', object:race %>
+	<% end %>
+</li>

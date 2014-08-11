@@ -1,0 +1,28 @@
+<%= provide(:title, 'New Race Entry') %>
+<h3>New race entry for <%= current_user.name %></h3>
+
+<div class="row">
+	<div class="span6">
+		<%= form_for(@race) do |f| %>
+			<%= render 'shared/error_messages', object: f.object%>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+
+			<%= f.label :bibnumber, "Bib Number" %>
+			<%= f.text_field :bibnumber%>
+
+			<%= f.label :time %>
+			<%= f.text_field :time %>
+
+			<%= f.label :date %>
+			<%= f.text_field :date %>
+
+			<%= f.label :description %>
+			<%= f.text_field :description %>
+
+
+			<%= f.submit "Add race", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>
+

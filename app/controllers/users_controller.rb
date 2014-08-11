@@ -60,8 +60,11 @@ class UsersController < ApplicationController
   end
 
   def races
+    @title = "Races"
+    @user = User.find(params[:id])
+    @races = @user.races.paginate(page: params[:page])
+    render 'show_races'
   end
-
 
   private
   	def  user_params

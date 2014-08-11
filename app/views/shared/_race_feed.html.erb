@@ -1,0 +1,6 @@
+<% if @user.races.any? %>
+	<ol class="list-group">
+		<%= render @races %>
+	</ol>
+	<%= will_paginate @races %>
+<% end %>

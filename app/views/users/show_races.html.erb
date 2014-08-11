@@ -1,10 +1,10 @@
-<%= provide(:title, @user.name) %>
+<%= provide(:title, @title) %>
 <div class="row">
 	<aside class="span3">
 		<section>
 			<%= gravatar_for @user %>
 			<h1>
-				<%= @user.name %>
+				<%= link_to @user.name, @user %>
 			</h1>
 			<h2>
 				<%= @user.email %>
@@ -16,12 +16,7 @@
 	</aside>
 	<div class="span8">
 	<%= render 'follow_form' if signed_in? %>
-		<% if @user.microposts.any? %>
-			<h3>Microposts (<%= @user.microposts.count %>)</h3>
-			<ol class="microposts">
-				<%= render @microposts %>
-			</ol>
-			<%= will_paginate @microposts %>
-		<% end %>
+		<h3>Races (<%= @user.races.count %>)</h3>
+		<%= render 'shared/race_feed' %>
 	</div>
 </div>
