@@ -1,6 +1,6 @@
 class RacesController < ApplicationController
-	before_action :signed_in_user, only: [:create, :destroy]
-	before_action :correct_user, only: :destroy
+	before_action :signed_in_user, only: [:edit, :update, :create, :destroy]
+	before_action :correct_user, only:[:edit, :update, :destroy]
 
 	def new
 		@race = Race.new
@@ -12,14 +12,27 @@ class RacesController < ApplicationController
 			flash[:success] = "Race added."
 			redirect_to root_url
 		else
+			flash[:error] = "Race not added, errors."
 			@feed_items=current_user.feed.paginate(page: params[:page])
-			render @user
+			redirect_to root_url
+		end
+	end
+
+	def edit
+	end
+
+	def update
+		if @race.update_attributes(race_params)
+			flash[:success] = "Race updated."
+			redirect_to current_user
+		else
+			render 'edit'
 		end
 	end
 
 	def destroy
 		@race.destroy
-		render root_url
+		redirect_to current_user
 	end
 
 	private
@@ -30,6 +43,7 @@ class RacesController < ApplicationController
 										 :date,
 										 :split,
 										 :photos,
+										 :location,
 										 :description)
 		end
 

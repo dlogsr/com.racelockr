@@ -13,9 +13,11 @@
 		<section>
 			<%= render 'shared/stats' %>
 		</section>
+		<section>
+			<a class="btn btn-large btn-primary" href="<%= new_race_path %>">Add a Race</a>
+		</section>
 	</aside>
 	<div class="span8">
-	<%= render 'follow_form' if signed_in? %>
 		<h3>Races (<%= @user.races.count %>)</h3>
 		<%= render 'shared/race_feed' %>
 	</div>
