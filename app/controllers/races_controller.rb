@@ -12,9 +12,7 @@ class RacesController < ApplicationController
 			flash[:success] = "Race added."
 			redirect_to root_url
 		else
-			flash[:error] = "Race not added, errors."
-			@feed_items=current_user.feed.paginate(page: params[:page])
-			redirect_to root_url
+			render 'new'
 		end
 	end
 

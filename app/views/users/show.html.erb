@@ -7,7 +7,7 @@
 				<%= @user.name %>
 			</h1>
 			<h2>
-				<%= current_user.location %>
+				<%= @user.location %>
 			</h2>
 		</section>
 		<section>
@@ -18,7 +18,7 @@
 	<%= render 'follow_form' if signed_in? %>
 		<h3>Races (<%= @user.races.count %>)</h3>
 		<%= render 'shared/race_feed' %>
-		
+
 		<% if @user.microposts.any? %>
 			<h3>Microposts (<%= @user.microposts.count %>)</h3>
 			<ol class="microposts">
