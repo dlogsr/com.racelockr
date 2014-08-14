@@ -6,22 +6,22 @@
 		<%= form_for(@race) do |f| %>
 			<%= render 'shared/error_messages', object: f.object%>
 			<%= f.label :name %>
-			<%= f.text_field :name %>
+			<%= f.text_field :name,  placeholder: "Enter the race name"%>
 
 			<%= f.label :location %>
-			<%= f.text_field :location %>
+			<%= f.text_field :location,  placeholder: "Where was the race?" %>
 
 			<%= f.label :bibnumber, "Bib Number" %>
-			<%= f.text_field :bibnumber%>
+			<%= f.text_field :bibnumber,  placeholder: "What was your bib number?"%>
 
-			<%= f.label :time , "Time (seconds) [for now]"%>
-			<%= f.text_field :time %>
+			<%= f.label :time , "Time (HH:MM:SS)"%>
+			<%= f.text_field :time, value: "", placeholder: "Enter your finish time" %>
 
 			<%= f.label :date %>
-			<%= f.text_field :date %>
+			<%= f.text_field :date,  placeholder: "When did you run it?"%>
 
 			<%= f.label :description %>
-			<%= f.text_area :description %>
+			<%= f.text_area :description, placeholder: "How did it go?"%>
 
 
 			<%= f.submit "Add race", class: "btn btn-large btn-primary" %>
