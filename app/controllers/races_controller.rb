@@ -8,6 +8,8 @@ class RacesController < ApplicationController
 
 	def create
 		@race = current_user.races.build(race_params)
+		@race.time = @race.time.split(':')
+		@race.time = {hours: @race.time[0], minutes: @race.time[1], seconds: @race.time[2]}
 		if @race.save
 			flash[:success] = "Race added."
 			redirect_to root_url
@@ -37,8 +39,8 @@ class RacesController < ApplicationController
 		def race_params
 			params.require(:race).permit(:name, 
 										 :bibnumber,
-										 :time,
 										 :date,
+										 :time,
 										 :split,
 										 :photos,
 										 :location,
