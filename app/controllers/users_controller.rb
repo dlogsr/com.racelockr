@@ -17,7 +17,6 @@ class UsersController < ApplicationController
       flash[:error] = "That user does not exist."
       redirect_to root_url
     end
-      redirect_to root_url
   end
 
   def new
