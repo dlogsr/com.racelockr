@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140812051344) do
+ActiveRecord::Schema.define(version: 20140814070444) do
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20140812051344) do
   create_table "races", force: true do |t|
     t.string   "name"
     t.integer  "bibnumber"
-    t.integer  "time"
     t.date     "date"
     t.text     "split"
     t.text     "photos"
@@ -34,6 +33,7 @@ ActiveRecord::Schema.define(version: 20140812051344) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "location"
+    t.integer  "time"
   end
 
   add_index "races", ["date"], name: "index_races_on_date"

@@ -31,6 +31,14 @@ class User < ActiveRecord::Base
     #Micropost.where("user_id = ?", id)
   end
 
+  def self.search(search)
+    if search
+      where 'name LIKE ? OR email LIKE ?', "%#{search}%", "%#{search}%"
+    else
+      all
+    end
+  end
+
   def following?(other_user)
     self.relationships.find_by(followed_id: other_user.id)
   end

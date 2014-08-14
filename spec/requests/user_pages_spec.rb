@@ -24,6 +24,19 @@ describe "UserPages" do
 			end
 		end
 
+		# describe "search function" do
+		# 	before (:all) {
+		# 		let(:user) { FactoryGirl.create(:user, name: "TestMan")}
+		# 		30.times {FactoryGirl.create(:user)}
+		# 	}
+		# 	after(:all) {User.delete_all}
+
+		# 	it "should find main user" do
+		# 		User.search("TestMan")
+		# 		expect(page).to have_content(mainuser.name)
+		# 	end
+		# end
+
 		describe "delete links" do
 			it { should_not have_link('delete')}
 
@@ -86,7 +99,7 @@ describe "UserPages" do
 
 				it { should have_link('Sign out')}
 				it { should have_title(user.name)}
-				it { should have_title(user.location)}
+				it { should have_content(user.location)}
 				it { should have_selector('div.alert.alert-success',text:'Welcome')}
 			end
 		end

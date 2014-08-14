@@ -1,5 +1,15 @@
 <% provide(:title, 'All users') %>
 <h1>All users</h1>
+<div class="row">
+	<div class="span8">
+		<%= form_tag users_path, method: 'get', class: "form-inline" do%>
+			<p>
+				<%= text_field_tag :search, params[:search], class: "span4", placeholder: "Enter racer name"%>
+				<%= submit_tag "Search", name: nil , class: "btn btn-primary" %>
+			</p>
+		<% end %>
+	</div>
+</div>
 
 <%= will_paginate %>
 

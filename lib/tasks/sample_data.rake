@@ -6,11 +6,11 @@ namespace :db do
     make_relationships
   end
   def make_users
-    admin = User.create!(name: "Ryan Dumlao",
-                 email: "dlogsr@gmail.com",
-                 password: "adidas99",
-                 password_confirmation: "adidas99",
-                 admin: true)
+    # admin = User.create!(name: "Ryan Dumlao",
+    #              email: "dlogsr@gmail.com",
+    #              password: "adidas99",
+    #              password_confirmation: "adidas99",
+    #              admin: true)
     99.times do |n|
       name  = Faker::Name.name
       email = "example-#{n+1}@railstutorial.org"
