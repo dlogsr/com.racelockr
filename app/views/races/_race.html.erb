@@ -5,7 +5,11 @@
 		<div class="time">Location: <%= race.location %></div>
 	<% end %>
 	<% if race.time %>
-		<div class="time">Time: <%= (race.time/216000.0).round(3) %> hours</div>
+		<div class="time">
+			Time: <%= race.time[:hours] %> hours,
+			<%= race.time[:minutes] %> minutes, 
+			<%= race.time[:seconds] %> seconds
+		</div>
 	<% end %>
 	<div class="description">Description: <%= race.description %></div>
 	<% if current_user?(race.user) %>
