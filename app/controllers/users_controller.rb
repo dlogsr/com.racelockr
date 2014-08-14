@@ -8,11 +8,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    if @user = User.find(params[:id]) do
+    if User.find(params[:id])
     	@user = User.find(params[:id])
       @microposts = @user.microposts.paginate(page: params[:page])
       @races = @user.races.paginate(page: params[:page])
-    end
     elsif signed_in?
       flash[:error] = "That user does not exist."
       redirect_to root_url
