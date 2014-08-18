@@ -3,6 +3,9 @@
 /* mixins, variables, etc */
 
 $grayMediumLight: #eaeaea;
+// $grayLight: $gray-light;
+// $grayDark: $gray-darker;
+// $grayLighter: $gray-lighter;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -11,9 +14,6 @@ $grayMediumLight: #eaeaea;
 }
 
 /* universal */
-
-$grayMediumLight: #eaeaea;
-
 html {
   overflow-y: scroll;
 }

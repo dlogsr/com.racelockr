@@ -2,13 +2,7 @@
 <div class="row">
 	<aside class="span3">
 		<section>
-			<%= gravatar_for @user %>
-			<h1>
-				<%= link_to @user.name, @user %>
-			</h1>
-			<h2>
-				<%= @user.email %>
-			</h2>
+			<%= render 'shared/user_info' %>
 		</section>
 		<section>
 			<%= render 'shared/stats' %>
