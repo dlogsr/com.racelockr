@@ -1,9 +1,6 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <% if signed_in? %>
-        <%= gravatar_for(current_user, size: 32) %>
-      <% end %>
       <%= link_to "racelockr", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">

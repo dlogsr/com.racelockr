@@ -28,7 +28,6 @@ class User < ActiveRecord::Base
 
   def feed
     Micropost.from_users_followed_by(self)
-    #Micropost.where("user_id = ?", id)
   end
 
   def self.search(search)

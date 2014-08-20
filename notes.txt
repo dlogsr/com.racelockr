@@ -1,0 +1,25 @@
+8/18/14 Tasks
+------------------
+
+Create race feed for homepage of user's follower's posts
+
+how microposts feed works:
+- feed defined in user.rb, specifically microposts, and from_users_followed_by defined in microposts.rb
+- feed is fed into static_pages_controller where it's defined as @feed_items
+- @feed_items is then rendered in shared/feed, iterates through  it and places it based on shared/feed_item, then paginated
+
+races feed:
+- need to create race feed function in user model
+	- Race.from_users_followed_by(self) -- must copy functionality from the microposts.rb model
+- feed this into a @race_items symbol in static_pages_controller
+- render @race_items similarly to _feed
+	- race partial already defined (from user's feed)
+- want a race feed to include the last 5 races in a user's friends, from the last 3 months
+
+race model:
+- add splits array to races model, use similar hash structure as the race time
+- add elevation change?
+- EVENT TYPE - run/bike/swim
+
+user model: 
+- goal times for race types, specific races
