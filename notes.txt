@@ -23,3 +23,11 @@ race model:
 
 user model: 
 - goal times for race types, specific races
+
+8/26/14 Notes
+----------------------
+
+how followers works:
+- routes defined as followers, following
+- user controller defines these two, sets the @users variable and sends it to show_follow view
+- member?

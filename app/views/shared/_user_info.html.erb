@@ -1,10 +1,10 @@
-<%= link_to gravatar_for(current_user, size:52), current_user %>
+<%= link_to gravatar_for(user, size:52), user %>
 <h1>
-	<%= link_to current_user.name, current_user %>
+	<%= link_to user.name, user %>
 </h1>
 <div class="span2">
 	<h2>
-		<%= current_user.email %>
-		<%= current_user.location %>
+		<%= user.email %>
+		<%= user.location %>
 	</h2>
 </div>
