@@ -1,12 +1,8 @@
-8/18/14 Tasks
+Tasks
 ------------------
 
+-8/18/14-
 Create race feed for homepage of user's follower's posts
-
-how microposts feed works:
-- feed defined in user.rb, specifically microposts, and from_users_followed_by defined in microposts.rb
-- feed is fed into static_pages_controller where it's defined as @feed_items
-- @feed_items is then rendered in shared/feed, iterates through  it and places it based on shared/feed_item, then paginated
 
 races feed:
 - need to create race feed function in user model
@@ -19,15 +15,39 @@ races feed:
 race model:
 - add splits array to races model, use similar hash structure as the race time
 - add elevation change?
-- EVENT TYPE - run/bike/swim
 
 user model: 
 - goal times for race types, specific races
 
-8/26/14 Notes
+
+
+-8/27/18-
+- add selection of race type to race model (hash? or just a string field constrained by HTML dropdown options)
+
+- implement an e-mail hiding option for users
+
+
+
+-9/2/18-
+- catch for 60+ seconds on time
+
+
+
+Notes
 ----------------------
 
+-8/18/14-
+how microposts feed works:
+- feed defined in user.rb, specifically microposts, and from_users_followed_by defined in microposts.rb
+- feed is fed into static_pages_controller where it's defined as @feed_items
+- @feed_items is then rendered in shared/feed, iterates through  it and places it based on shared/feed_item, then paginated
+
+
+-8/26/14-
 how followers works:
 - routes defined as followers, following
 - user controller defines these two, sets the @users variable and sends it to show_follow view
 - member?
+
+-8/28/14-
+make races into CARDS

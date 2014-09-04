@@ -1,7 +1,5 @@
-# Ruby on Rails Tutorial: sample application
+#welcome to racelockr
 
-This is the sample application for
-the [*Ruby on Rails Tutorial*](http://railstutorial.org/)
-by [Michael Hartl](http://michaelhartl.com/).
+your race tracker and racer network
 
-Running version can be seen on [Heroku](http://racelockr.herokuapp.com).
+racelockr is a race-tracking service where users can sign up, store their race results / photos / discussions, and share and network with others.
