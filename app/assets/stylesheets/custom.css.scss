@@ -68,13 +68,14 @@ p {
 
 #logo {
   float: left;
-  margin-right: 10px;
+  // margin-right: 10px;
+  margin:auto;
   font-size: 1.7em;
   color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
+  // text-transform: uppercase;
+  // letter-spacing: -1px;
+  // padding-top: 9px;
+  // font-weight: bold;
   line-height: 1;
   &:hover {
   	color:#ffa;
@@ -112,6 +113,12 @@ footer {
   		margin-left:10px;
   	}
   }
+}
+
+/* default splash */
+
+#splash-logo{
+  margin: -25px auto 0;
 }
 
 /* misecllaneous */
