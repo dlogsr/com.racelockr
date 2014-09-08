@@ -24,7 +24,7 @@ class RacesController < ApplicationController
 	def update
 		if @race.update_attributes(race_params)
 			flash[:success] = "Race updated."
-			redirect_to current_user
+			redirect_to races_user_path(current_user)
 		else
 			render 'edit'
 		end
@@ -37,7 +37,9 @@ class RacesController < ApplicationController
 
 	private
 		def race_params
-			params.require(:race).permit(:name, 
+			params.require(:race).permit(:name,
+										 :racetype,
+										 :distance, 
 										 :bibnumber,
 										 :date,
 										 :time,

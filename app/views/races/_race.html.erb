@@ -1,6 +1,10 @@
 <li class="list-group-item">
 	<div class="name">Race: <b><%= race.name %></b></div>
 	<div class="date">Date: <%= race.date.to_formatted_s(:long) %></div>
+	<div class="racetype">Race Type: <%= racetype_given(race.racetype) %></div>
+	<% if race.distance %>
+		<div class="distance">Distance: <%= race.distance %></div>
+	<% end %>
 	<% if race.location %>
 		<div class="time">Location: <%= race.location %></div>
 	<% end %>

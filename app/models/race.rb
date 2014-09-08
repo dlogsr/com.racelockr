@@ -4,6 +4,7 @@ class Race < ActiveRecord::Base
 	validates :name, presence: true # make sure there is at least a name
 	validates :date, presence: true # race also needs a date
 	validates :user_id, presence: true # race must be associated with a user
+	validates :racetype, presence:true # race needs a type
 	serialize :time, Hash
 	serialize :splits
 	# attr_accessible :time

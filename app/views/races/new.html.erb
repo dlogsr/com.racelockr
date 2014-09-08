@@ -8,6 +8,9 @@
 			<%= f.label :name %>
 			<%= f.text_field :name,  placeholder: "Enter the race name"%>
 
+			<%= f.label :racetype %>
+			<%= f.select(:racetype, [['Running',1],['Swimming',2],['Biking',3],['Triathlon',4]]) %>
+
 			<%= f.label :distance %>
 			<%= f.text_field :distance,  placeholder: "How long was the race?"%>
 

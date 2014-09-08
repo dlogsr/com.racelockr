@@ -8,6 +8,12 @@
 			<%= f.label :name %>
 			<%= f.text_field :name %>
 
+			<%= f.label :racetype %>
+			<%= f.select(:racetype, [['Running',1],['Swimming',2],['Biking',3],['Triathlon',4]]) %>
+
+			<%= f.label :distance %>
+			<%= f.text_field :distance,  placeholder: "How long was the race?"%>
+
 			<%= f.label :location %>
 			<%= f.text_field :location %>
 
@@ -15,7 +21,10 @@
 			<%= f.text_field :bibnumber%>
 
 			<%= f.label :time %>
-			<%= f.text_field :time %>
+			<%= f.text_field :time, 
+				value: @race.time[:hours] + ":" + 
+						@race.time[:minutes] + ":" + 
+						@race.time[:seconds]%>
 
 			<%= f.label :date %>
 			<%= f.text_field :date %>
@@ -24,7 +33,7 @@
 			<%= f.text_field :description %>
 
 
-			<%= f.submit "Edit race", class: "btn btn-large btn-primary" %>
+			<%= f.submit "Submit race changes", class: "btn btn-large btn-primary" %>
 		<% end %>
 	</div>
 </div>
