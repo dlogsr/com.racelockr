@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20140908045024) do
     t.string   "time"
     t.decimal  "distance"
     t.time     "splits"
-    t.string   "racetype"
+    t.decimal  "racetype"
   end
 
   add_index "races", ["date"], name: "index_races_on_date"
