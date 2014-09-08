@@ -13,6 +13,7 @@ races feed:
 - want a race feed to include the last 5 races in a user's friends, from the last 3 months
 
 race model:
+- ADD DISTANCE!!
 - add splits array to races model, use similar hash structure as the race time
 - add elevation change?
 
