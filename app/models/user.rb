@@ -30,6 +30,10 @@ class User < ActiveRecord::Base
     Micropost.from_users_followed_by(self)
   end
 
+  def race_feed
+    Race.from_users_followed_by(self)
+  end
+
   def self.search(search)
     if search
       where 'name LIKE ? OR email LIKE ?', "%#{search}%", "%#{search}%"

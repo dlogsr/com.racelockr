@@ -12,7 +12,7 @@ class RacesController < ApplicationController
 		@race.time = {hours: @race.time[0], minutes: @race.time[1], seconds: @race.time[2]}
 		if @race.save
 			flash[:success] = "Race added."
-			redirect_to root_url
+			redirect_to races_user_path(current_user)
 		else
 			render 'new'
 		end
@@ -32,7 +32,7 @@ class RacesController < ApplicationController
 
 	def destroy
 		@race.destroy
-		redirect_to current_user
+		redirect_to races_user_path(current_user)
 	end
 
 	private

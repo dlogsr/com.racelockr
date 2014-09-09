@@ -1,0 +1,10 @@
+<li id="<%= race_feed_item.id %>">
+	<%= link_to gravatar_for(race_feed_item.user), race_feed_item.user %>
+	<span class="user">
+		<%= link_to race_feed_item.user.name, race_feed_item.user %>
+	</span>
+	<span class="content"><%= race_feed_item.name %></span>
+	<span class="timestamp">
+		<!-- Posted <%= time_ago_in_words(race_feed_item.created_at) %> ago. -->
+	</span>
+</li>

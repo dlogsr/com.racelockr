@@ -13,7 +13,18 @@ class Race < ActiveRecord::Base
 	def update_time
 		if time_changed? and time.is_a?(String)
 			self.time = self.time.split(':')
+			# if self.time[1] > 60
+			# 	self.time[0] += (self.time[1] / 60)
+			# 	self.time[1] = self.time[1] % 60
+			# end
 			self.time = {hours: self.time[0], minutes: self.time[1], seconds: self.time[2]}
 		end
+	end
+
+	def self.from_users_followed_by(user)
+		followed_user_ids = "SELECT followed_id FROM relationships
+							 WHERE follower_id = :user_id"
+		where("user_id IN (#{followed_user_ids}) OR user_id = :user_id", 
+			user_id: user)
 	end
 end

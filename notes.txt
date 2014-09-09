@@ -22,15 +22,19 @@ user model:
 
 
 
--8/27/18-
+-8/27/14-
 - add selection of race type to race model (hash? or just a string field constrained by HTML dropdown options)
 
 - implement an e-mail hiding option for users
 
 
 
--9/2/18-
+-9/2/14-
 - catch for 60+ seconds on time
+
+-9/7/14-
+ - need to convert time to integer in order to do the 60+ seconds catch
+ - successfully added distance, splits and race type to race model
 
 
 
