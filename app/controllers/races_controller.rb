@@ -2,6 +2,16 @@ class RacesController < ApplicationController
 	before_action :signed_in_user, only: [:edit, :update, :create, :destroy]
 	before_action :correct_user, only:[:edit, :update, :destroy]
 
+	def show
+		if Race.find(params[:id])
+			@race = Race.find(params[:id])
+			@user = @race.user
+		elsif signed_in?
+		  flash[:error] = "That race does not exist."
+		  redirect_to root_url
+		end
+	end
+
 	def new
 		@race = Race.new
 	end

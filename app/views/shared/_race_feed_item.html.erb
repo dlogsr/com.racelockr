@@ -3,7 +3,11 @@
 	<span class="user">
 		<%= link_to race_feed_item.user.name, race_feed_item.user %>
 	</span>
-	<span class="content"><%= race_feed_item.name %></span>
+	<span class="content">ran the 
+		<%= link_to(race_feed_item) do %>
+			<%= race_feed_item.name %> 
+		<% end %>
+		on <%= race_feed_item.date%></span>
 	<span class="timestamp">
 		<!-- Posted <%= time_ago_in_words(race_feed_item.created_at) %> ago. -->
 	</span>
