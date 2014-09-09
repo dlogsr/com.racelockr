@@ -1,7 +1,8 @@
 <li class="list-group-item">
 	<div class="name">
+		Race: 
 		<%= link_to(race) do %>
-			Race: <b><%= race.name %></b>
+			<b><%= race.name %></b>
 		<% end %>
 		<% if current_user?(race.user) %>
 			| <%= link_to "edit race", edit_race_path(race) %>
