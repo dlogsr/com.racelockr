@@ -4,12 +4,11 @@
 		<%= link_to(race) do %>
 			<b><%= race.name %></b>
 		<% end %>
+		<div class="pull-right">
 		<% if current_user?(race.user) %>
-			| <%= link_to "edit race", edit_race_path(race) %>
+			<%= render 'shared/edit_delete_race', object:race %>
 		<% end %>
-		<% if current_user?(race.user) %>
-			 | <%= render 'shared/delete', object:race %>
-		<% end %>
+		</div>
 	</div>
 	<div class="date">Date: <%= race.date.to_formatted_s(:long) %></div>
 	<div class="racetype">Race Type: <%= racetype_given(race.racetype) %></div>

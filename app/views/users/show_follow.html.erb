@@ -1,6 +1,6 @@
 <% provide(:title, @title) %>
 <div class="row">
-	<aside class="span4">
+	<aside class="col-sm-4">
 		<section>
 			<%= render 'shared/user_info', user: @user %>
 		</section>
@@ -15,7 +15,7 @@
 			<% end %>
 		</section>
 	</aside>
-	<div class="span8">
+	<div class="col-sm-8">
 		<h3><%= @title %></h3>
 		<% if @users.any? %>
 			<ul class="users">

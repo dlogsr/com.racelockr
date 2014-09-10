@@ -215,7 +215,7 @@ a:focus {
   .row:after {
     clear: both; }
 
-[class*="span"] {
+[class*="col-sm-"] {
   float: left;
   min-height: 1px;
   margin-left: 20px; }
@@ -307,7 +307,7 @@ a:focus {
     line-height: 0; }
   .row-fluid:after {
     clear: both; }
-  .row-fluid [class*="span"] {
+  .row-fluid [class*="col-sm-"] {
     display: block;
     width: 100%;
     min-height: 30px;
@@ -317,9 +317,9 @@ a:focus {
     float: left;
     margin-left: 2.12766%;
     *margin-left: 2.07447%; }
-  .row-fluid [class*="span"]:first-child {
+  .row-fluid [class*="col-sm-"]:first-child {
     margin-left: 0; }
-  .row-fluid .controls-row [class*="span"] + [class*="span"] {
+  .row-fluid .controls-row [class*="col-sm-"] + [class*="col-sm-"] {
     margin-left: 2.12766%; }
   .row-fluid .span1 {
     width: 6.38298%;
@@ -430,12 +430,12 @@ a:focus {
     margin-left: 102.12766%;
     *margin-left: 102.02128%; }
 
-[class*="span"].hide,
-.row-fluid [class*="span"].hide {
+[class*="col-sm-"].hide,
+.row-fluid [class*="col-sm-"].hide {
   display: none; }
 
-[class*="span"].pull-right,
-.row-fluid [class*="span"].pull-right {
+[class*="col-sm-"].pull-right,
+.row-fluid [class*="col-sm-"].pull-right {
   float: right; }
 
 .container {
@@ -984,27 +984,27 @@ textarea::-webkit-input-placeholder {
 .input-xxlarge {
   width: 530px; }
 
-input[class*="span"],
-select[class*="span"],
-textarea[class*="span"],
-.uneditable-input[class*="span"],
-.row-fluid input[class*="span"],
-.row-fluid select[class*="span"],
-.row-fluid textarea[class*="span"],
-.row-fluid .uneditable-input[class*="span"] {
+input[class*="col-sm-"],
+select[class*="col-sm-"],
+textarea[class*="col-sm-"],
+.uneditable-input[class*="col-sm-"],
+.row-fluid input[class*="col-sm-"],
+.row-fluid select[class*="col-sm-"],
+.row-fluid textarea[class*="col-sm-"],
+.row-fluid .uneditable-input[class*="col-sm-"] {
   float: none;
   margin-left: 0; }
 
-.input-append input[class*="span"],
-.input-append .uneditable-input[class*="span"],
-.input-prepend input[class*="span"],
-.input-prepend .uneditable-input[class*="span"],
-.row-fluid input[class*="span"],
-.row-fluid select[class*="span"],
-.row-fluid textarea[class*="span"],
-.row-fluid .uneditable-input[class*="span"],
-.row-fluid .input-prepend [class*="span"],
-.row-fluid .input-append [class*="span"] {
+.input-append input[class*="col-sm-"],
+.input-append .uneditable-input[class*="col-sm-"],
+.input-prepend input[class*="col-sm-"],
+.input-prepend .uneditable-input[class*="col-sm-"],
+.row-fluid input[class*="col-sm-"],
+.row-fluid select[class*="col-sm-"],
+.row-fluid textarea[class*="col-sm-"],
+.row-fluid .uneditable-input[class*="col-sm-"],
+.row-fluid .input-prepend [class*="col-sm-"],
+.row-fluid .input-append [class*="col-sm-"] {
   display: inline-block; }
 
 input,
@@ -1012,7 +1012,7 @@ textarea,
 .uneditable-input {
   margin-left: 0; }
 
-.controls-row [class*="span"] + [class*="span"] {
+.controls-row [class*="col-sm-"] + [class*="col-sm-"] {
   margin-left: 20px; }
 
 input.span1,
@@ -1084,12 +1084,12 @@ textarea.span12,
   .controls-row:after {
     clear: both; }
 
-.controls-row [class*="span"],
-.row-fluid .controls-row [class*="span"] {
+.controls-row [class*="col-sm-"],
+.row-fluid .controls-row [class*="col-sm-"] {
   float: left; }
 
-.controls-row .checkbox[class*="span"],
-.controls-row .radio[class*="span"] {
+.controls-row .checkbox[class*="col-sm-"],
+.controls-row .radio[class*="col-sm-"] {
   padding-top: 5px; }
 
 input[disabled],
@@ -1650,10 +1650,10 @@ table {
 .table-hover tbody tr:hover > th {
   background-color: whitesmoke; }
 
-table td[class*="span"],
-table th[class*="span"],
-.row-fluid table td[class*="span"],
-.row-fluid table th[class*="span"] {
+table td[class*="col-sm-"],
+table th[class*="col-sm-"],
+.row-fluid table td[class*="col-sm-"],
+.row-fluid table th[class*="col-sm-"] {
   display: table-cell;
   float: none;
   margin-left: 0; }

@@ -2,7 +2,7 @@
 <h3>New race entry for <%= current_user.name %></h3>
 
 <div class="row">
-	<div class="span6">
+	<div class="col-sm-6">
 		<%= form_for(@race) do |f| %>
 			<%= render 'shared/error_messages', object: f.object%>
 			<%= f.label :name %>

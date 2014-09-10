@@ -7,7 +7,7 @@ $grayLight: $gray-light;
 $grayDark: $gray-dark;
 $grayDarker: $gray-darker;
 $grayLighter: $gray-lighter;
-$blue: blue;
+$blue: $brand-primary;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -25,7 +25,7 @@ body {
 }
 
 section {
-  overflow: auto;
+  // overflow: auto;
 }
 
 textarea {
@@ -71,6 +71,7 @@ p {
 #logo {
   float: left;
   // margin-right: 10px;
+  padding-left:1em;
   margin:auto;
   font-size: 1.7em;
   color: white;
@@ -213,7 +214,7 @@ input {
   margin: 10px 0 0 0;
 
   li {
-    padding: 10px 0;
+    // padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
 }
