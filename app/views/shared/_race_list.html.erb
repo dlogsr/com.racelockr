@@ -2,5 +2,5 @@
 	<ol class="microposts list-group">
 		<%= render @races %>
 	</ol>
-	<%= will_paginate @races %>
+	<%= will_paginate @races, renderer: BootstrapPagination::Rails %>
 <% end %>

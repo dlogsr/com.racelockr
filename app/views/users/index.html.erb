@@ -1,20 +1,28 @@
 <% provide(:title, 'All users') %>
 <h1>All users</h1>
 <div class="row">
-	<div class="col-sm-8">
+	<div class="col-sm-12">
 		<%= form_tag users_path, method: 'get', class: "form-inline" do%>
-			<p>
-				<%= text_field_tag :search, params[:search], class: "col-sm-4", placeholder: "Enter racer name"%>
-				<%= submit_tag "Search", name: nil , class: "btn btn-primary" %>
-			</p>
+		<div class="form-group col-md-8 col-sm-12">
+			<%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Enter racer name"%>
+		</div>
+		<div class="form-group col-md-4 col-sm-12">
+			<%= button_tag "Search", name: nil , class: "btn btn-primary form-control" %>
+		</div>
 		<% end %>
 	</div>
 </div>
-
-<%= will_paginate %>
-
+<div class="row">
+	<div class="col-sm-10">
+		<%= will_paginate renderer: BootstrapPagination::Rails %>
+	</div>
+</div>
 <ul class="users">
 	<%= render @users %>
 </ul>
 
-<%= will_paginate %>	
+<div class="row">
+	<div class="col-sm-10">
+		<%= will_paginate renderer: BootstrapPagination::Rails %>
+	</div>
+</div>
