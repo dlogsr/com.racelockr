@@ -3,8 +3,8 @@
 <div class="row">
 	<div class="col-sm-12">
 		<%= form_tag users_path, method: 'get', class: "form-inline" do%>
-		<div class="form-group col-md-8 col-sm-12">
-			<%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Enter racer name"%>
+		<div class="form-group col-md-6 col-sm-12">
+			<%= text_field_tag :search, params[:search], class: "form-control", id: "search-form", placeholder: "Enter racer name"%>
 		</div>
 		<div class="form-group col-md-4 col-sm-12">
 			<%= button_tag "Search", name: nil , class: "btn btn-primary form-control" %>
