@@ -1,6 +1,6 @@
 <%= provide(:title, @race.name) %>
 <div class="row">
-	<aside class="col-sm-3">
+	<aside class="col-md-3 col-sm-4">
 		<section>
 			<%= render 'shared/user_info', user: @user %>
 		</section>
@@ -8,7 +8,7 @@
 			<%= render 'shared/stats' %>
 		</section>
 	</aside>
-	<div class="col-sm-9">
+	<div class="col-md-9 col-sm-8">
 		<ul class="list-group">
 			<li class="name list-group-item">Race: <b><%= @race.name %></b></li>
 			<li class="date list-group-item">Date: <%= @race.date.to_formatted_s(:long) %></li>
