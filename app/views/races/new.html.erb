@@ -3,31 +3,31 @@
 
 <div class="row">
 	<div class="col-sm-6">
-		<%= form_for(@race) do |f| %>
+		<%= form_for(@race, class: "form-group") do |f| %>
 			<%= render 'shared/error_messages', object: f.object%>
 			<%= f.label :name %>
-			<%= f.text_field :name,  placeholder: "Enter the race name"%>
+			<%= f.text_field :name,  placeholder: "Enter the race name", class: "form-control"%>
 
 			<%= f.label :racetype %>
 			<%= f.select(:racetype, [['Running',1],['Swimming',2],['Biking',3],['Triathlon',4]]) %>
 
 			<%= f.label :distance %>
-			<%= f.text_field :distance,  placeholder: "How long was the race?"%>
+			<%= f.text_field :distance,  placeholder: "How long was the race?", class: "form-control"%>
 
 			<%= f.label :location %>
-			<%= f.text_field :location,  placeholder: "Where was the race?" %>
+			<%= f.text_field :location,  placeholder: "Where was the race?", class: "form-control" %>
 
 			<%= f.label :bibnumber, "Bib Number" %>
-			<%= f.text_field :bibnumber,  placeholder: "What was your bib number?"%>
+			<%= f.text_field :bibnumber,  placeholder: "What was your bib number?", class: "form-control"%>
 
 			<%= f.label :time , "Time (HH:MM:SS)"%>
-			<%= f.text_field :time, value: "", placeholder: "Enter your finish time" %>
+			<%= f.text_field :time, value: "", placeholder: "Enter your finish time", class: "form-control" %>
 
 			<%= f.label :date %>
-			<%= f.text_field :date,  placeholder: "When did you run it?"%>
+			<%= f.text_field :date,  placeholder: "When did you run it?", class: "form-control"%>
 
 			<%= f.label :description %>
-			<%= f.text_area :description, placeholder: "How did it go?"%>
+			<%= f.text_area :description, placeholder: "How did it go?", class: "form-control"%>
 
 
 			<%= f.submit "Add race", class: "btn btn-large btn-primary" %>
