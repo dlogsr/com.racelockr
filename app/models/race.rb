@@ -7,6 +7,7 @@ class Race < ActiveRecord::Base
 	validates :racetype, presence:true # race needs a type
 	serialize :time, Hash
 	serialize :splits
+	has_many :race_comments, dependent: :destroy
 	# attr_accessible :time
 	before_validation :update_time
 

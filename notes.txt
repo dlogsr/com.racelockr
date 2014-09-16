@@ -36,7 +36,10 @@ user model:
  - need to convert time to integer in order to do the 60+ seconds catch
  - successfully added distance, splits and race type to race model
 
-
+-9/15/14-
+- add race comments. comments should be associated to races, but also have user_id of who posted it
+- ability to edit, delete comments
+- display comments on the individual race page
 
 Notes
 ----------------------
@@ -55,4 +58,4 @@ how followers works:
 - member?
 
 -8/28/14-
-make races into CARDS
+make races into CARDS - formatted with full info or small info (race feed holds small cards, user race list holds large cards)
