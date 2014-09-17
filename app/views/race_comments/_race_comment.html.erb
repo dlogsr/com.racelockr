@@ -1,0 +1,9 @@
+<li class="list-group-item">
+	<span class="content"><%= race_comment.content %></span>
+	<span class="timestamp">
+		Posted <%= time_ago_in_words(race_comment.created_at) %> ago.
+	</span>
+	<% if current_user?(race_comment.user) %>
+		<%= render 'shared/delete', object: race_comment %>
+	<% end %>
+</li>

@@ -6,6 +6,7 @@ class RacesController < ApplicationController
 		if Race.find(params[:id])
 			@race = Race.find(params[:id])
 			@user = @race.user
+			@race_comment = @race.race_comments.build
 		elsif signed_in?
 		  flash[:error] = "That race does not exist."
 		  redirect_to root_url

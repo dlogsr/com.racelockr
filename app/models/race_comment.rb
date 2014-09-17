@@ -5,6 +5,6 @@ class RaceComment < ActiveRecord::Base
 	validates :race_id, presence: true
 	validates :user_id, presence: true
 
-	before_save {self.user_id = self.race_id.user_id}
+	# before_save {self.user_id = self.race_id.user_id}
 
 end

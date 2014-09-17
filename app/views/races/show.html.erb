@@ -31,5 +31,8 @@
 				<%= render 'shared/edit_delete_race', object:@race %>
 			<% end %>
 		</ul>
+		<section class="col-xs-12">
+			<%= render 'race_comments/race_comment_form', object: @race_comment%>
+		</section>
 	</div>
 </div>
