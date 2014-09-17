@@ -14,4 +14,12 @@ FactoryGirl.define do
 		content "Lorem ipsum"
 		user
 	end
+
+	factory :race do
+		name "Test Race"
+		date "2014-09-15"
+		racetype 1
+		user
+		# race
+	end
 end

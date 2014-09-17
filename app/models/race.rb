@@ -1,4 +1,5 @@
 class Race < ActiveRecord::Base
+	has_many :race_comments, dependent: :destroy
 	belongs_to :user
 	default_scope -> { order('date DESC') }
 	validates :name, presence: true # make sure there is at least a name
@@ -7,7 +8,6 @@ class Race < ActiveRecord::Base
 	validates :racetype, presence:true # race needs a type
 	serialize :time, Hash
 	serialize :splits
-	has_many :race_comments, dependent: :destroy
 	# attr_accessible :time
 	before_validation :update_time
 
