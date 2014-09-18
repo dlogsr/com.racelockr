@@ -7,6 +7,7 @@ class RacesController < ApplicationController
 			@race = Race.find(params[:id])
 			@user = @race.user
 			@race_comment = @race.race_comments.build
+			@current_race_comments = RaceComment.where(race_id: params[:id]).paginate(page: params[:page], per_page: 10)
 		elsif signed_in?
 		  flash[:error] = "That race does not exist."
 		  redirect_to root_url

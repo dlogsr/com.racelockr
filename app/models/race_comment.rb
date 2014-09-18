@@ -5,6 +5,9 @@ class RaceComment < ActiveRecord::Base
 	validates :race_id, presence: true
 	validates :user_id, presence: true
 
+	def comment_feed
+		RaceComment.where()
+	end
 	# before_save {self.user_id = self.race_id.user_id}
 
 end
