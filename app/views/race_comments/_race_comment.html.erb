@@ -1,5 +1,8 @@
 <li class="list-group-item">
-	
+	<%= link_to gravatar_for(racecomment_user(race_comment.user_id)), racecomment_user(race_comment.user_id) %>
+	<span class="user">
+		<%= link_to racecomment_user(race_comment.user_id).name, racecomment_user(race_comment.user_id) %>
+	</span>
 	<span class="content"><%= race_comment.content %></span>
 	<span class="timestamp">
 		Posted <%= time_ago_in_words(race_comment.created_at) %> ago.

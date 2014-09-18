@@ -1,14 +1,23 @@
 <li id="<%= race_feed_item.id %>" class="list-group-item">
-	<%= link_to gravatar_for(race_feed_item.user), race_feed_item.user %>
-	<span class="user">
-		<%= link_to race_feed_item.user.name, race_feed_item.user %>
-	</span>
-	<span class="content">ran the 
-		<%= link_to(race_feed_item) do %>
-			<%= race_feed_item.name %> 
-		<% end %>
-		on <%= race_feed_item.date%></span>
-	<span class="description">
-		<%= race_feed_item.description %>
-	</span>
+	<div class="row">
+		<div class="col-xs-2 center-block col-md-1">
+			<%= link_to gravatar_for(race_feed_item.user), race_feed_item.user %>
+		</div>
+		<div class="col-xs-10 col-md-11">
+			<span class="user race-feed-span">
+				<%= link_to race_feed_item.user.name, race_feed_item.user %>
+			</span>
+			<span class="content race-feed-span">ran the 
+				<%= link_to(race_feed_item) do %>
+					<%= race_feed_item.name %> 
+				<% end %>
+				on <%= race_feed_item.date%></span>
+			<span class="description race-feed-span">
+				<%= race_feed_item.description %>
+			</span>
+			<span class="comments race-feed-span">
+				Comments: <%= race_feed_item.race_comments.count %>
+			</span>
+		</div>
+	</div>
 </li>
