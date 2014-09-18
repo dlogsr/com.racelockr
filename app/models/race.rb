@@ -1,5 +1,5 @@
 class Race < ActiveRecord::Base
-	has_many :race_comments, foreign_key: "race_id", dependent: :destroy
+	has_many :race_comments, foreign_key: "race_id", source: "id", dependent: :destroy
 	belongs_to :user
 	default_scope -> { order('date DESC') }
 	validates :name, presence: true # make sure there is at least a name

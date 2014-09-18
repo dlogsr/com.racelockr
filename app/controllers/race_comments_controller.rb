@@ -6,13 +6,14 @@ class RaceCommentsController < ApplicationController
 	end
 
 	def create
-		@race = Race.find_by(params[:race_id])
+		# @race = Race.where(id: params[:race_id]).first
+		@race = Race.where(id: racecomment_params[:race_id]).take
 		@race_name = @race.name
 		@race_comment = @race.race_comments.build(racecomment_params)
 		@race_comment.race_id = @race.id
 		@race_comment.user_id = current_user.id;
 		if @race_comment.save
-			flash[:success] = "Comment added to #{@race_name}, race id #{(@race.id)}, given as #{params[:race_id]}!"
+			flash[:success] = "Comment added to #{@race_name}!"
 			redirect_to races_user_path(current_user) #need to go to original race
 		else
 			flash[:error] = "did not work."

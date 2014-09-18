@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :followed_users, through: :relationships, source: :followed
   has_many :followers, through: :reverse_relationships
   has_many :races, dependent: :destroy
+  has_many :race_comments, through: :races, foreign_key: "user_id", dependent: :destroy
 
 	before_save {self.email = email.downcase}
 	before_create :create_remember_token
