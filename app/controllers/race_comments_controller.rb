@@ -14,7 +14,7 @@ class RaceCommentsController < ApplicationController
 		@race_comment.user_id = current_user.id;
 		if @race_comment.save
 			flash[:success] = "Comment added to #{@race_name}!"
-			redirect_to races_user_path(current_user) #need to go to original race
+			redirect_to race_path(@race) #need to go to original race
 		else
 			flash[:error] = "did not work."
 			redirect_to races_user_path(current_user) #need to go to original race
