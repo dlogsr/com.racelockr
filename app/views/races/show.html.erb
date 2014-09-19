@@ -9,6 +9,11 @@
 		</section>
 	</aside>
 	<div class="col-md-9 col-sm-8">
+		<div class="row text-center">
+			<h3>
+				<strong><%=@user.name%></strong>'s entry for <strong><%= @race.name %></strong>
+			</h3>
+		</div>
 		<ul class="list-group">
 			<li class="name list-group-item">Race: <b><%= @race.name %></b></li>
 			<li class="date list-group-item">Date: <%= @race.date.to_formatted_s(:long) %></li>

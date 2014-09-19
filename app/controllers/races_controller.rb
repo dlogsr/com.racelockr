@@ -36,7 +36,7 @@ class RacesController < ApplicationController
 	def update
 		if @race.update_attributes(race_params)
 			flash[:success] = "Race updated."
-			redirect_to races_user_path(current_user)
+			redirect_to race_path(@race)
 		else
 			render 'edit'
 		end

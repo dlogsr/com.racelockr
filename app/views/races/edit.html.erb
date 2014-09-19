@@ -21,11 +21,16 @@
 			<%= f.label :bibnumber, "Bib Number" %>
 			<%= f.text_field :bibnumber, class: "form-control"%>
 
+			<% if @race.time[:hours]%>
+				<% @edit_race_time = @race.time[:hours] + ":" + 
+					@race.time[:minutes] + ":" + 
+					@race.time[:seconds] %>
+			<% else %>
+				<% @edit_race_time = "Enter a time" %>
+			<% end %>
 			<%= f.label :time %>
 			<%= f.text_field :time, 
-				value: @race.time[:hours] + ":" + 
-						@race.time[:minutes] + ":" + 
-						@race.time[:seconds], class: "form-control"%>
+					value: @edit_race_time, class: "form-control"%>
 
 			<%= f.label :date %>
 			<%= f.text_field :date, class: "form-control" %>
