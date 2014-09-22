@@ -1,6 +1,6 @@
 class RaceCommentsController < ApplicationController
 	before_action :signed_in_user, only: [:create, :destroy]
-	# before_action :correct_user, only: :destroy
+	before_action :delete_comment, only: :destroy
 
 	def index
 	end
@@ -22,13 +22,20 @@ class RaceCommentsController < ApplicationController
 	end
 
 	def destroy
+		# @race_id = RaceComment.where(race_id: racecomment_params[:race_id])
+		# @race = Race.where(id: @race_id).take
+		@race_id = @race_comment.race_id
+		@race = Race.where(id: @race_id).take
 		@race_comment.destroy
-		redirect_to root_url
+		redirect_to race_path(@race)
 	end
 
 	private
 		def racecomment_params
 			params.require(:race_comment).permit(:content, :race_id, :user_id)
+		end
 
+		def delete_comment
+			@race_comment = RaceComment.find_by(id: params[:id])
 		end
 end

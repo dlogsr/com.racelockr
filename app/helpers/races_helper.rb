@@ -17,7 +17,12 @@ module RacesHelper
 		pace_total = (time[:hours].to_i * 60 + time[:minutes].to_i + time[:seconds].to_f / 60) / distance
 		# pace = (time[:hours].to_i * 60 + time[:minutes] + time[:seconds] / 60) / distance
 		pace_seconds = ( pace_total % 1 * 60 ).truncate
-		pace = pace_total.truncate.to_s + ":" + pace_seconds.to_s
+		if pace_seconds < 10
+			pace_seconds = "0"+pace_seconds.to_s
+		else
+			pace_seconds = pace_seconds.to_s
+		end
+		pace = pace_total.truncate.to_s + ":" + pace_seconds
 		pace
 	end
 end

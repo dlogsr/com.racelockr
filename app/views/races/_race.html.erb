@@ -13,21 +13,26 @@
 	<div class="date">Date: <%= race.date.to_formatted_s(:long) %></div>
 	<div class="racetype">Race Type: <%= racetype_given(race.racetype) %></div>
 	<% if race.distance %>
-		<div class="distance">Distance: <%= race.distance %></div>
+		<div class="distance">Distance: <%= race.distance %> miles</div>
 	<% end %>
-	<% if race.location %>
+	<% if race.location != "" %>
 		<div class="time">Location: <%= race.location %></div>
 	<% end %>
 	<% if race.time[:hours] %>
 		<div class="time">
-			Time: <%= race.time[:hours] %> hours,
-			<%= race.time[:minutes] %> minutes, 
-			<%= race.time[:seconds] %> seconds
+			Time: 
+			<% if race.time[:hours] != "00" %>
+				<%= race.time[:hours] %>h
+			<% end %>
+			<%= race.time[:minutes] %>m
+			<%= race.time[:seconds] %>s
 		</div>
 	<% end %>
 	<% if race.time && race.distance %>
-		<div class="pace">Pace: <%= racepace(race.time, race.distance) %></div>
+		<div class="pace">Pace: <%= racepace(race.time, race.distance) %> min/mi</div>
 	<% end %>
-	<div class="description">Description: <%= race.description %></div>
+	<% if race.description != "" %>
+		<div class="description">Description: <%= race.description %></div>
+	<% end %>
 	<div class="comments">Comments: <%= race.race_comments.count %> </div>
 </li>

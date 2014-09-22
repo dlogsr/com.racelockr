@@ -19,27 +19,36 @@
 			<li class="date list-group-item">Date: <%= @race.date.to_formatted_s(:long) %></li>
 			<li class="racetype list-group-item">Race Type: <%= racetype_given(@race.racetype) %></li>
 			<% if @race.distance %>
-				<li class="distance list-group-item">Distance: <%= @race.distance %></li>
+				<li class="distance list-group-item">Distance: <%= @race.distance %> miles</li>
 			<% end %>
-			<% if @race.location %>
+			<% if @race.location != "" %>
 				<li class="location list-group-item">Location: <%= @race.location %></li>
 			<% end %>
 			<% if @race.time %>
 				<li class="time list-group-item">
-					Time: <%= @race.time[:hours] %> hours,
-					<%= @race.time[:minutes] %> minutes, 
-					<%= @race.time[:seconds] %> seconds
+					Time: 
+					<% if @race.time[:hours] != "00" %>
+						<%= @race.time[:hours] %>h
+					<% end %>
+					<%= @race.time[:minutes] %>m
+					<%= @race.time[:seconds] %>s
 				</li>
 			<% end %>
 			<% if @race.time && @race.distance %>
-				<li class="pace list-group-item">Pace: <%= racepace(@race.time, @race.distance) %></li>
+				<li class="pace list-group-item">Pace: <%= racepace(@race.time, @race.distance) %> min/mi</li>
 			<% end %>
-			<li class="description list-group-item">Description: <%= @race.description %></li>
+			<% if @race.description != "" %>
+				<li class="description list-group-item">Description: <%= @race.description %></li>
+			<% end %>
 			<% if current_user?(@race.user) %>
 				<%= render 'shared/edit_delete_race', object:@race %>
 			<% end %>
 		</ul>
 		<section class="col-xs-12">
+			<%= render 'race_comments/race_comment_form' %>
+		</section>
+		<section class="col-xs-12">
+
 			<% if @race.race_comments.any? %>
 				<h3>Comments: <%= @race.race_comments.count %></h3>
 				<ol class="microposts list-group">
@@ -47,9 +56,6 @@
 				</ol>
 				<%= will_paginate @current_race_comments, renderer: BootstrapPagination::Rails %>
 			<% end %>
-		</section>
-		<section class="col-xs-12">
-			<%= render 'race_comments/race_comment_form' %>
 		</section>
 	</div>
 </div>

@@ -64,3 +64,4 @@ make races into CARDS - formatted with full info or small info (race feed holds 
 what's the difference when using @var and var in views (full vs partials)?
 -- partials are called (i.e. _race, _user) when rendering a model in full ( render @users )
 -- when viewing a single model entry (race/show), @race defines just that specific model entry
+need to see why Description and Location save as blank strings and instead set as NIL in model

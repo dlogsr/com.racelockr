@@ -3,17 +3,17 @@
 
 <div class="row">
 	<div class="col-sm-6">
-		<%= form_for(@race, class: "form-horizontal") do |f| %>
+		<%= form_for(@race, class: "form-group") do |f| %>
 		<div class="form-group">
 			<%= render 'shared/error_messages', object: f.object%>
 			<%= f.label :name %>
 			<%= f.text_field :name, class: "form-control"%>
 
-			<%= f.label :racetype %>
+			<%= f.label "Race Type" %>
 			<%= f.select(:racetype, [['Running',1],['Swimming',2],['Biking',3],['Triathlon',4]])%>
 
-			<%= f.label :distance %>
-			<%= f.text_field :distance,  placeholder: "How long was the race?", class: "form-control"%>
+			<%= f.label "Distance (in mi)" %>
+			<%= f.text_field :distance,  placeholder: "How long was the race? (in mi)", class: "form-control"%>
 
 			<%= f.label :location %>
 			<%= f.text_field :location, class: "form-control" %>
