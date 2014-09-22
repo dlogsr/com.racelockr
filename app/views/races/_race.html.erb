@@ -18,12 +18,15 @@
 	<% if race.location %>
 		<div class="time">Location: <%= race.location %></div>
 	<% end %>
-	<% if race.time %>
+	<% if race.time[:hours] %>
 		<div class="time">
 			Time: <%= race.time[:hours] %> hours,
 			<%= race.time[:minutes] %> minutes, 
 			<%= race.time[:seconds] %> seconds
 		</div>
+	<% end %>
+	<% if race.time && race.distance %>
+		<div class="pace">Pace: <%= racepace(race.time, race.distance) %></div>
 	<% end %>
 	<div class="description">Description: <%= race.description %></div>
 	<div class="comments">Comments: <%= race.race_comments.count %> </div>

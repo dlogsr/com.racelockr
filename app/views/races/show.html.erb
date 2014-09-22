@@ -31,6 +31,9 @@
 					<%= @race.time[:seconds] %> seconds
 				</li>
 			<% end %>
+			<% if @race.time && @race.distance %>
+				<li class="pace list-group-item">Pace: <%= racepace(@race.time, @race.distance) %></li>
+			<% end %>
 			<li class="description list-group-item">Description: <%= @race.description %></li>
 			<% if current_user?(@race.user) %>
 				<%= render 'shared/edit_delete_race', object:@race %>

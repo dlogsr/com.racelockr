@@ -59,3 +59,8 @@ how followers works:
 
 -8/28/14-
 make races into CARDS - formatted with full info or small info (race feed holds small cards, user race list holds large cards)
+
+-9/20/14-
+what's the difference when using @var and var in views (full vs partials)?
+-- partials are called (i.e. _race, _user) when rendering a model in full ( render @users )
+-- when viewing a single model entry (race/show), @race defines just that specific model entry
