@@ -24,7 +24,7 @@
 			<% if @race.location != "" %>
 				<li class="location list-group-item">Location: <%= @race.location %></li>
 			<% end %>
-			<% if @race.time %>
+			<% if @race.time[:minutes] %>
 				<li class="time list-group-item">
 					Time: 
 					<% if @race.time[:hours] != "00" %>

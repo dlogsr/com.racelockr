@@ -18,7 +18,7 @@
 	<% if race.location != "" %>
 		<div class="time">Location: <%= race.location %></div>
 	<% end %>
-	<% if race.time[:hours] %>
+	<% if race.time[:minutes] %>
 		<div class="time">
 			Time: 
 			<% if race.time[:hours] != "00" %>

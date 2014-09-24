@@ -17,7 +17,9 @@
 				<%= race_feed_item.description %>
 			</span>
 			<span class="comments race-feed-span">
-				Comments: <%= race_feed_item.race_comments.count %>
+				<% if race_feed_item.race_comments.count != 0%>
+					<%= pluralize(race_feed_item.race_comments.count, "comment") %>
+				<% end %>
 			</span>
 		</div>
 	</div>
