@@ -14,16 +14,21 @@ class Race < ActiveRecord::Base
 	def update_time
 		if time_changed? and time.is_a?(String)
 			self.time = self.time.split(':')
-			for n in (self.time.count)..0
-				# this is not yet working
-				if self.time[n].to_i > 60
-					self.time[n+1].to_i += (self.time[n].to_i / 60)
-					self.time[n].to_i = self.time[n].to_i % 60
-				else
-					self.time[n] = 'a'
+			self.time.each do |k,v|
+				@time = v.to_i
+				if @timecarry
+					@time+=@timecarry
 				end
+				if @time > 60
+					@timecarry = @time / 60
+					@time = @time%60
+				end
+				@time = @time.to_s
+				v = @time.to_s
+				self.time[k] = v
+				@timecarry = nil
 			end
-			self.time = {hours: self.time[0], minutes: self.time[1], seconds: self.time[2]}
+			# self.time = {hours: self.time[0], minutes: self.time[1], seconds: self.time[2]}
 		end
 	end
 
