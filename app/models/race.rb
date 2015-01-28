@@ -16,20 +16,19 @@ class Race < ActiveRecord::Base
 			@testtime = self.time.split(':')
 			@updatedTime = @testtime.reverse
 			@updatedTime.map!.with_index do |k|
-		    @time = k.to_i
-		    if @timecarry
-		      @time += @timecarry
-		      @timecarry = nil
-		    end
-		    if @time >= 60
-		      @timecarry = @time / 60
-		      @time = @time %60
-		    end
-		    @time = @time.to_s
-		    #puts "final time is " + @time
-		  end
-		@updatedTime = @updatedTime.reverse
-		self.time = {hours: @updatedTime[0], minutes: @updatedTime[1], seconds: @updatedTime[2]}
+				@time = k.to_i
+				if @timecarry
+					@time += @timecarry
+					@timecarry = nil
+				end
+				if @time >= 60
+					@timecarry = @time / 60
+					@time = @time %60
+				end
+				@time = @time.to_s
+			end
+			@updatedTime = @updatedTime.reverse
+			self.time = {hours: @updatedTime[0], minutes: @updatedTime[1], seconds: @updatedTime[2]}
 		end
 	end
 

@@ -21,7 +21,21 @@ class RacesController < ApplicationController
 	def create
 		@race = current_user.races.build(race_params)
 		@race.time = @race.time.split(':')
-		@race.time = {hours: @race.time[0], minutes: @race.time[1], seconds: @race.time[2]}
+		@updatedTime = @race.time.reverse
+			@updatedTime.map!.with_index do |k|
+				@time = k.to_i
+				if @timecarry
+					@time += @timecarry
+					@timecarry = nil
+				end
+				if @time >= 60
+					@timecarry = @time / 60
+					@time = @time %60
+				end
+				@time = @time.to_s
+			end
+		@updatedTime = @updatedTime.reverse
+		@race.time = {hours: @updatedTime[0], minutes: @updatedTime[1], seconds: @updatedTime[2]}
 		if @race.save
 			flash[:success] = "Race added."
 			redirect_to races_user_path(current_user)
